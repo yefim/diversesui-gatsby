@@ -5,7 +5,7 @@ class Counter extends React.Component {
   constructor() {
     super()
 
-    this.state = {counter: 0}
+    this.state = { counter: 0 }
   }
 
   render() {
@@ -13,11 +13,15 @@ class Counter extends React.Component {
       <div>
         <p>{this.state.counter}</p>
         <button
-          onClick={() => { this.setState({counter: this.state.counter + 1}) }}
-        >Click</button>
+          onClick={() => {
+            this.setState({ counter: this.state.counter + 1 })
+          }}
+        >
+          Click
+        </button>
         <Link to="/page-2/">Go to page 2</Link>
       </div>
-    );
+    )
   }
 }
 
