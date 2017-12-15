@@ -1,14 +1,33 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-    <Link to="/counter/">Counter</Link>
-  </div>
-)
+class IndexPage extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      size: 78,
+      sex: 'neutral',
+      images: null,
+      page: 0,
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <select
+          value={this.state.sex}
+          onChange={e => {
+            this.setState({ sex: e.target.value })
+          }}
+        >
+          <option value="neutral">Neutral</option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+        </select>
+      </div>
+    )
+  }
+}
 
 export default IndexPage
